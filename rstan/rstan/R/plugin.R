@@ -33,7 +33,7 @@ static_linking <- function() {
 }
 
 PKG_CPPFLAGS_env_fun <- function() {
-   paste(' -I"', file.path(rstan_inc_path_fun(), '/stansrc" '),
+   paste(' -I"', file.path(rstan_inc_path_fun(), '/stan" '),
          ' -isystem"', file.path(eigen_path_fun(), '" '),
          ' -isystem"', file.path(eigen_path_fun(), '/unsupported" '),
          ' -isystem"', rstan_options("boost_lib"), '"',
