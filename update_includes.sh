@@ -4,7 +4,7 @@ RSTAN_INCLUDE=rstan/rstan/inst/include
 RSTAN_STANLIB=${RSTAN_INCLUDE}/stanlib
 EIGEN_FOR_RSTAN=${RSTAN_STANLIB}/eigen
 BOOST_FOR_RSTAN=${RSTAN_STANLIB}/boost
-RSTAN_STANSRC=${RSTAN_INCLUDE}/stan
+RSTAN_STANSRC=${RSTAN_INCLUDE}/stansrc
 
 BOOSTPATH=`find ./stan/lib -path '*lib/boost_*' -regex '.*lib\/boost_[^/]*'`
 echo "boost path: $BOOSTPATH"
@@ -21,7 +21,9 @@ mkdir -p $RSTAN_STANLIB
 
 ## Eigen
 mkdir -p $EIGEN_FOR_RSTAN
-cp -r ${EIGENPATH}/* $EIGEN_FOR_RSTAN
+cp -r ${EIGENPATH}/Eigen $EIGEN_FOR_RSTAN
+mkdir -p $EIGEN_FOR_RSTAN/unsupported
+cp -r ${EIGENPATH}/unsupported/Eigen $EIGEN_FOR_RSTAN/unsupported/
 
 ## Boost
 mkdir -p $BOOST_FOR_RSTAN

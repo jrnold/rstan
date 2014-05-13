@@ -19,7 +19,7 @@ EIGEN_PATH = ../inst/include/stanlib/eigen
 
 PKG_LIBS = $(shell $(R_HOME)/bin${R_ARCH_BIN}/Rscript --vanilla -e "Rcpp:::LdFlags()") 
 
-PKG_CPPFLAGS += -I"../inst/include/stan"  
+PKG_CPPFLAGS += -I"../inst/include/stansrc"  
 PKG_CPPFLAGS += -I"$(EIGEN_PATH)" 
 PKG_CPPFLAGS += -I"$(EIGEN_PATH)/unsupported" 
 # PKG_CPPFLAGS += -I$(shell find ../inst/include/stanlib -path '*lib/boost_*' -regex '.*lib\/boost_[^/]*')

@@ -14,7 +14,7 @@ LIBSTANOBJECTS = agrad__rev__var_stack.o
 EIGEN_PATH = ../inst/include/stanlib/eigen
 
 PKG_LIBS = $(shell  $(R_HOME)/bin/Rscript --vanilla -e "Rcpp:::LdFlags()") 
-PKG_CPPFLAGS += -I"../inst/include/stan"  
+PKG_CPPFLAGS += -I"../inst/include/stansrc"  
 PKG_CPPFLAGS += -isystem"$(EIGEN_PATH)" 
 PKG_CPPFLAGS += -isystem"$(EIGEN_PATH)/unsupported" 
 # PKG_CPPFLAGS += -isystem$(shell find ../inst/include/stanlib -path '*lib/boost_*' -regex '.*lib\/boost_[^/]*')
